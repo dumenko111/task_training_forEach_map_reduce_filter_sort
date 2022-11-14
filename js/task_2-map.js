@@ -45,5 +45,5 @@ const updatePlayer = players.map(player => {
         { ...player, timePlayed: player.timePlayed + 200000, } //повертаємо в новому об'єкті змінену timePlayed
         : player; //повертаємо старий об'єкт де нічого не змінювали
 })
-console.table(updatePlayers)
+console.table(updatePlayer)
 
