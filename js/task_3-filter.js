@@ -2,7 +2,7 @@
 const numbers = [5, 10, 15, 20, 25]
 
 const filterNumb = numbers.filter(number => number < 10 || number > 20)
-console.log(filterNumb)
+// console.log(filterNumb)
 
 
 
@@ -16,12 +16,23 @@ const players = [
 ]
 //отримуємо з масиву players всіх гравців які online
 const playerStatus = players.filter(player => player.online)
-console.log(playerStatus)
+// console.log(playerStatus)
 
 //отримуємо з масиву players всіх гравців які offline
 const statusPlayer = players.filter(player => !player.online)
-console.log(statusPlayer)
+// console.log(statusPlayer)
 
 //виводимо в консоль всіх гравців, які награли більше 250
 const hardcorePlayers = players.filter(player => player.timePlayed > 250)
-console.table(hardcorePlayers)
+// console.table(hardcorePlayers)
+
+
+
+const numb = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+//повертаємо масив чисел, які входять між min i max
+const filterRange = (arr, min, max) => arr.filter(el => el >= min && el <= max)
+
+console.log(filterRange(numb, 5, 7))
+/////////////////////
+

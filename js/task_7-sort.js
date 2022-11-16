@@ -16,3 +16,11 @@ console.table(sortedBestPlayers)
 
 const sortedPlayerName = [...players].sort((prev, next) => prev.name[0] > next.name[0] ? 1 : -1)
 console.table(sortedPlayerName) //в колбеці звертаємося до індексу строки [0] і повертаємо 1 або -1
+
+////////////////////////
+//посортувати у випадковому порядку
+const number = [1, 2, 3, 1, 3, 2, 4, 5, 4, 7, 8]
+const copyNum = [...number]
+const randomNumber = copyNum.sort(() => Math.random() - 0.5) //0.5 повертає випадкове число
+console.log(randomNumber)
+console.table(number)

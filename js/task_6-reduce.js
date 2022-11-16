@@ -64,3 +64,42 @@ const tagsStats = allTag.reduce((acc, tag) => {
   , {})
 console.table(tagsStats)
   ////////////////////////////////////////////
+  //повертаємо середнє арифметичне
+  const numb = [1, 2, 1, 3, 4, 5, 6, 6, 7, 8, 9, 10]
+
+  const getAverage = numb.reduce((acc, el) => acc + el / numb.length, 0)
+  console.log(getAverage)
+
+/////////////////////////////////
+const notUniqueNumbers = [1, 2, 3, 1, 3, 2, 4, 5, 4, 7, 8]
+const uniqueNumbers = notUniqueNumbers.reduce((acc, el) => {
+  if (!acc.includes(el)) {
+  acc.push(el)}
+  return acc
+},[])
+console.log(uniqueNumbers)
+///////////////робимо те саме через SET!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+const unique = [...new Set(notUniqueNumbers)] //конструктор Set повертає з масиву тільки унікальні числа
+console.log(unique)
+
+
+//ділимо масив на маленткі масиви
+const data = [1, 2, 3, 4, 5, 6, 7]
+
+const chunk = (array, size) => {
+  const chunkedArray = array.reduce((acc, el) => {
+    const lastArray = acc[acc.length - 1]
+    if (lastArray.length < size) {
+      lastArray.push(el)
+    } else { 
+      acc.push([el])
+    }
+      return acc
+    } , [[]])
+   
+  return chunkedArray
+}
+
+console.log(chunk(data, 2))
+console.log(chunk(data, 3))
+
