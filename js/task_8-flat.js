@@ -17,7 +17,7 @@ const tweets = [
 const flatTwets = tweets.map(el => el.tags).flat(1)
 // console.log(flatTwets) //отримуємо список всіх tags в одному масиві
 
-//!!!!!!!!!!!!!метод FLATMAP замість того що вище
+//!!!!!!!!!!!!!метод FLATMAP замість 2 методів - тих що вище
 const tweetsFlatMap = tweets.flatMap(el => el.tags)
 console.log(tweetsFlatMap)
 
@@ -34,3 +34,9 @@ const stats = tweets
         {},
 )
     console.log(stats)
+    
+////ЗАЛИШАЄМО ТІЛЬКИ УНІКАЛЬНІ ЕЛЕМЕНТИ !"!"!""!"!"!№!№!№!;!№;!"№!№;!;!№;!№!"!"!№;!№!№!№;!;№!№!№!№"
+const uniqueTags = tweetsFlatMap.filter((item, index, arr) => {
+    return arr.indexOf(item) === index //перевіряємо index
+})
+console.log(uniqueTags)
